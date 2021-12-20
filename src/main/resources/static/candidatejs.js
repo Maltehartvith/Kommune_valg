@@ -1,4 +1,8 @@
-// Metode der laver rækkerne i tabellen.
+
+sessionStorage.setItem("CANDIDATES_URL", "http://localhost:8080/api/candidates");
+const CANDIDATES_URL = sessionStorage.getItem("CANDIDATES_URL");
+
+// Metode der laver rækkerne i tabellen inden på index siden (candidate-table-body).
 function makeRows() {
     const rows = cache.getAll().map(c => `
          <tr>
@@ -14,6 +18,8 @@ function makeRows() {
     document.getElementById("candidate-table-body").innerHTML = rows.join("")
 }
 
+//Metode som laver elementerne inde i datalisten, et pr parti, samt også er med til at kunne
+//sortere i listen - det kommer længere nede
 function makeDatalist(){
     const unique = [...new Set(cache.getAll().map(candidate => candidate.party))];
     const startOption = `<option>Alle</option>`
@@ -24,11 +30,7 @@ function makeDatalist(){
     document.getElementById("parties").innerHTML = startOption+ rows.join("")
 }
 
-function partyVoteCounter(){
-
-}
-
-//METODE OVER LOCAL CACHE - INDEHOLDER FORSKELLIGE METODER
+//Metode som opretter en
 function localCache() {
     let data = []
     const addEdit = (candidate, method) => {
@@ -74,7 +76,7 @@ function handleTableClick(evt) {
             method: "DELETE",
             headers: {'Accept': 'application/json'},
         }
-        fetch("api/candidates/" + idToDelete, options)
+        fetch(CANDIDATES_URL+"/" + idToDelete, options)
             .then(res => {
                 if (res.ok) {
                     cache.deleteOne(idToDelete)
@@ -125,7 +127,7 @@ function saveCandidate() {
     candidate.party = document.getElementById("party").value
     candidate.votes = document.getElementById("input-votes").value
     const method = candidate.id ? "PUT" : "POST"
-    const url = (method === "PUT") ? "api/candidates/" + candidate.id : "api/candidates"
+    const url = (method === "PUT") ? CANDIDATES_URL+"/" + candidate.id : CANDIDATES_URL
     const options = {
         method: method,
         headers: {
@@ -152,7 +154,7 @@ function saveCandidate() {
 
 //FETCH ALLE KANDIDATER
 function fetchCandidates() {
-    fetch("api/candidates")
+    fetch(CANDIDATES_URL)
         .then(res => res.json())
         .then(data => {
             //test med get i stedet 
@@ -161,12 +163,13 @@ function fetchCandidates() {
             makeDatalist()
         })
 }
+//Fetcher alle de kandidater som er inde for det valgte parti. Det er i sammenhæng med
 function fetchPartyCandidates() {
     const party = document.getElementById("parties").value
     if(document.getElementById("parties").value === "Alle"){
         fetchCandidates()
     }else{
-    fetch("api/candidates/party/"+party)
+    fetch(CANDIDATES_URL+"/party/"+party)
         .then(res => res.json())
         .then(data => {
             //test med get i stedet

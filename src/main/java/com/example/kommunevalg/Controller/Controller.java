@@ -13,19 +13,20 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/candidates")
+@CrossOrigin(origins="*")
 public class Controller {
 
     @Autowired
     CandidateRepo candidateRepo;
 
-
+    //Controller til at finde alle kandidater
     @GetMapping
     public ResponseEntity<List<Candidate>> findAll() {
         List<Candidate> candidates = new ArrayList<>();
         candidateRepo.findAll().forEach(candidates::add);
         return ResponseEntity.status(HttpStatus.OK).body(candidates);
     }
-
+    //Controller til at finde alle kandidater inden for et bestemt parti
     @GetMapping("/party/{partyName}")
     public ResponseEntity<List<Candidate>> findByParty(@PathVariable("partyName") String partyName){
         List<Candidate> candidate = new ArrayList<>();
@@ -33,7 +34,7 @@ public class Controller {
         return ResponseEntity.status(HttpStatus.OK).body(candidate);
     }
 
-
+    //Controller til at finde en enkelt kandidat
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Candidate>> findById(@PathVariable Long id) {
         Optional<Candidate> optionalCandidate = candidateRepo.findById(id);
@@ -43,20 +44,20 @@ public class Controller {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(optionalCandidate);
         }
     }
-
+    //Controller til at lave en kandidat
     @PostMapping
     public ResponseEntity<Candidate> create(@RequestBody Candidate candidate) {
         Candidate newCandidate = candidateRepo.save(candidate);
         return ResponseEntity.status(HttpStatus.CREATED).header("Candidate", "/candidates/"
                 + candidate.getId()).body(newCandidate);
     }
-
+    //Controller til at redigere en kandidat
     @PutMapping("/{id}")
     public ResponseEntity<Candidate> edit(@RequestBody Candidate candidate) {
         Candidate newCandidate = candidateRepo.save(candidate);
         return ResponseEntity.status(HttpStatus.OK).body(newCandidate);
     }
-
+    //Controller til at slette en kandidat
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id) {
         Optional<Candidate> optionalCandidate = candidateRepo.findById(id);
@@ -66,6 +67,5 @@ public class Controller {
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-
     }
 }
