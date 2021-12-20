@@ -23,22 +23,9 @@ function makeDatalist(){
     document.getElementById("party-list").innerHTML = rows.join("")
     document.getElementById("parties").innerHTML = startOption+ rows.join("")
 }
-function partyVoteCounter(){
-    let tempInfo = {}
-    cache.getAll().forEach(function(candidate) {
-        if (tempInfo.hasOwnProperty(candidate.party)) {
-            tempInfo[candidate.party] = tempInfo[candidate.party] + candidate.votes;
-        } else {
-            tempInfo[candidate.party] = candidate.votes;
-        }
-    });
-    console.log(tempInfo)
-    let partyInformation = [];
 
-    for (let prop in tempInfo) {
-        console.log(prop)
-        partyInformation.push({ name: prop, value: tempInfo[prop] });
-    }
+function partyVoteCounter(){
+
 }
 
 //METODE OVER LOCAL CACHE - INDEHOLDER FORSKELLIGE METODER
@@ -191,5 +178,3 @@ function fetchPartyCandidates() {
 
 const cache = localCache()
 fetchCandidates()
-partyVoteCounter()
-

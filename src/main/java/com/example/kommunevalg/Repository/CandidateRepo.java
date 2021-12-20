@@ -8,5 +8,4 @@ import java.util.List;
 public interface CandidateRepo extends CrudRepository<Candidate, Long> {
 
     List<Candidate> findByParty(String party);
-
 }

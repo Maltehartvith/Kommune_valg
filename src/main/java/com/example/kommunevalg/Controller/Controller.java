@@ -33,6 +33,7 @@ public class Controller {
         return ResponseEntity.status(HttpStatus.OK).body(candidate);
     }
 
+
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Candidate>> findById(@PathVariable Long id) {
         Optional<Candidate> optionalCandidate = candidateRepo.findById(id);
