@@ -1,0 +1,27 @@
+.table{
+    width: 60%;
+    position: center;
+    text-align: center;
+    margin: auto;
+
+}
+#input-name, #party, #input-votes{
+    width: 100%;
+}
+.h1{
+    text-align: center;
+}
+.container #btn-add-candidate{
+    position: absolute;
+    top: 10%;
+    left: 24.5%
+}
+
+#name-for-table{
+    text-align: left;
+}
+#div-for-sort{
+    position: absolute;
+    top: 13.5%;
+    left: 76%
+}
