@@ -56,8 +56,7 @@ function setUpHandlers() {
         document.getElementById("btn-add-candidate").onclick = makeNewCandidate
     if(document.getElementById("parties") !== null){
         (document.getElementById("parties")).onchange = fetchPartyCandidates
-
-    }
+    }document.getElementById("modal-chart-button").onclick = showChartModal
 }
 
 setUpHandlers()
@@ -89,9 +88,6 @@ function handleTableClick(evt) {
         const candidate = cache.findById(idToEdit)
         showModal(candidate)
     }
-    if(target.dataset.idGet){
-
-    }
 }
 
 //TOM MODAL TIL AT LAVE NY ATTRACTION
@@ -101,7 +97,6 @@ function makeNewCandidate() {
         name: "",
         party: "",
         votes: ""
-
     })
 }
 
@@ -113,6 +108,11 @@ function showModal(candidate) {
     document.getElementById("input-name").value = candidate.name
     makeDatalist()
     document.getElementById("input-votes").value = candidate.votes
+    myModal.show()
+}
+
+function showChartModal(){
+    const myModal = new bootstrap.Modal(document.getElementById('modal-chart'))
     myModal.show()
 }
 

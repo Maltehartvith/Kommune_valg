@@ -25,6 +25,9 @@
     <button type="button" class="btn btn-primary" id="btn-add-candidate" data-bs-target="#staticBackdrop">
         Tilføj ny kandidat
     </button>
+    <button id="modal-chart-button" class="btn btn-primary">
+        Vis valgresultat
+    </button>
     <tr>
         <th id="name-for-table">Navn </th>
         <th>Parti<br> <select id="parties" style="text-align: center"><option>Alle</option></select></th>
@@ -37,11 +40,8 @@
     <tbody id="candidate-table-body" style="position: center"></tbody>
 
 </table>
-
-
-
 <br><br><br><br>
-<div id="piechart"></div>
+
 
 <div class="modal fade" id="candidate-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-sm">
@@ -81,6 +81,25 @@
     </div>
 </div>
 <!--END OF MODAL -->
+<!-- START PÅ CHART MODAL -->
+<div class="modal" id="modal-chart">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">De optalte stemmer:</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="piechart">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 </body>
 <script src="candidatejs.js"></script>
 <script src="chartJS.js"></script>
