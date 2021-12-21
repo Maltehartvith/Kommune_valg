@@ -32,7 +32,6 @@ public class DataBaseSetup implements CommandLineRunner {
         candidateRepo.save(new Candidate("Anthon Berentzen", "Socialdemokratiet",206 ));
         candidateRepo.save(new Candidate("Kristian Niebuhr", "Socialdemokratiet", 124));
         candidateRepo.save(new Candidate("Allan Olsen", "Socialdemokratiet",90 ));
-
         candidateRepo.save(new Candidate("Christina Rittig Falkberg", "Radikale Venstre", 728));
         candidateRepo.save(new Candidate("Pia Skou", "Radikale Venstre", 513));
         candidateRepo.save(new Candidate("Claus Wachmann", "Radikale Venstre", 76));
@@ -46,7 +45,6 @@ public class DataBaseSetup implements CommandLineRunner {
         candidateRepo.save(new Candidate("Flemming Ytzen", "Radikale Venstre",13 ));
         candidateRepo.save(new Candidate("Mads Bondo Dydensborg", "Radikale Venstre", 12));
         candidateRepo.save(new Candidate("Bjarne Tolboe Christiansen", "Radikale Venstre",23 ));
-
         candidateRepo.save(new Candidate("Henrik Sørensen", "Det Konservative Folkeparti",620 ));
         candidateRepo.save(new Candidate("Thomas Germann", "Det Konservative Folkeparti", 158));
         candidateRepo.save(new Candidate("Rebecca Plomin", "Det Konservative Folkeparti", 317));
@@ -55,10 +53,8 @@ public class DataBaseSetup implements CommandLineRunner {
         candidateRepo.save(new Candidate("Mogens Busk Sørensen", "Det Konservative Folkeparti", 43));
         candidateRepo.save(new Candidate("Marianne Damgaard-Sørensen", "Det Konservative Folkeparti", 107));
         candidateRepo.save(new Candidate("Christa Kjær", "Det Konservative Folkeparti", 58));
-
         candidateRepo.save(new Candidate("Jan Pless", "Nye Borgerlige", 430));
         candidateRepo.save(new Candidate("Carsten Toft", "Nye Borgerlige", 67));
-
         candidateRepo.save(new Candidate("Serdal Benli", "Socialistisk Folkeparti", 1310));
         candidateRepo.save(new Candidate("Dorthe Wichmand Müller", "Socialistisk Folkeparti", 280));
         candidateRepo.save(new Candidate("Signe Ejersbo", "Socialistisk Folkeparti", 231));
@@ -69,27 +65,21 @@ public class DataBaseSetup implements CommandLineRunner {
         candidateRepo.save(new Candidate("Peter Malinovsky", "Socialistisk Folkeparti", 75));
         candidateRepo.save(new Candidate("Gunnar Svendsen", "Socialistisk Folkeparti", 18));
         candidateRepo.save(new Candidate("Anne Breum", "Socialistisk Folkeparti", 89));
-
         candidateRepo.save(new Candidate("Jørgen Juhl", "Liberal Alliance", 82));
         candidateRepo.save(new Candidate("David Ibsen", "Liberal Alliance", 76));
         candidateRepo.save(new Candidate("Kim Fuglsang Laczek", "Liberal Alliance", 54));
         candidateRepo.save(new Candidate("Jytte Tholstrup Svendsen", "Liberal Alliance", 16));
-
         candidateRepo.save(new Candidate("Esben Frette Johnsen", "Kristendemokraterne", 46));
         candidateRepo.save(new Candidate("Bolette von Westphal", "Kristendemokraterne", 31));
-
         candidateRepo.save(new Candidate("Lise Tønner", "Lokallisten Gladsaxe",383 ));
         candidateRepo.save(new Candidate("Lene Svendborg", "Lokallisten Gladsaxe", 206));
         candidateRepo.save(new Candidate("John Ellehammer", "Lokallisten Gladsaxe", 39));
         candidateRepo.save(new Candidate("Suleman Naim", "Lokallisten Gladsaxe", 418));
-
-
         candidateRepo.save(new Candidate("Susanne Damsgaard", "Dansk Folkeparti", 457));
         candidateRepo.save(new Candidate("Bonett Trusell", "Dansk Folkeparti", 122));
         candidateRepo.save(new Candidate("Klaus Kjær", "Dansk Folkeparti", 75));
         candidateRepo.save(new Candidate("Flemming H. Albrechtsen", "Dansk Folkeparti", 22));
         candidateRepo.save(new Candidate("Patricia Damsgaard", "Dansk Folkeparti", 11));
-
         candidateRepo.save(new Candidate("Martin Skou Heidemann", "Venstre", 985));
         candidateRepo.save(new Candidate("Astrid Søborg", "Venstre", 777));
         candidateRepo.save(new Candidate("Lone Yalcinkaya", "Venstre", 347));
@@ -102,7 +92,6 @@ public class DataBaseSetup implements CommandLineRunner {
         candidateRepo.save(new Candidate("Camilla Friis", "Venstre", 315));
         candidateRepo.save(new Candidate("René Wriedt", "Venstre", 28));
         candidateRepo.save(new Candidate("Finn Kilbak", "Venstre", 111));
-
         candidateRepo.save(new Candidate("Trine Henriksen", "Enhedslisten", 868));
         candidateRepo.save(new Candidate("Signe Rosa Skelbæk", "Enhedslisten", 426));
         candidateRepo.save(new Candidate("Michael Dorph Jensen", "Enhedslisten", 122));
@@ -113,8 +102,5 @@ public class DataBaseSetup implements CommandLineRunner {
         candidateRepo.save(new Candidate("Bertha M. Friis", "Enhedslisten", 133));
         candidateRepo.save(new Candidate("Morten Ravn Landerslev", "Enhedslisten", 15));
         candidateRepo.save(new Candidate("Patrick Okwonga", "Enhedslisten", 26));
-
-
     }
-
 }
