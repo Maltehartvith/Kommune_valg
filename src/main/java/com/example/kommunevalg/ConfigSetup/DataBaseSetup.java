@@ -5,6 +5,8 @@ import com.example.kommunevalg.Repository.CandidateRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
+//Configuration - her bliver alle de forskellige partikandidater skrevet direkte til databasen.
+//tallene er taget fra https://kmdvalg.dk/KV/2021/K84982159.htm og det er ikke alle partier som er med
 @Configuration
 public class DataBaseSetup implements CommandLineRunner {
 
